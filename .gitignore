@@ -1,5 +1,6 @@
 # Custom project ignores
 build/
+.DS*
 
 # Prerequisites
 *.d
