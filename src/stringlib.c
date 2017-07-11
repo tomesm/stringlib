@@ -41,9 +41,14 @@ int str_rotate(const char source[], char destination[], int number)
     if (number < 0)
         return -1;
     
-    int len = str_len(source) ;
+    int len = str_len(source);
+    if (len == 0)
+        return 0;
+    
+    char first = source[0];
     char *string = (char *) malloc(len);
     str_cp(string, (char *) source);
+    
     for (int i = 0; i < number; i++) {
         // put last source into first dest position
         destination[0] = string[len - 1];
@@ -54,30 +59,15 @@ int str_rotate(const char source[], char destination[], int number)
             str_cp(string, destination);
     }
     destination[len] = '\0';
-    // DEBUG print
-    printf("%s\n", destination);
-    return number;
+    
+    for (int j = 0; j < len; j++) {
+        if (first == destination[j])
+            return j;
+    }
+
+    return -1;
 }
 
-/*
-int print_env(const char *env[], char separator[])
-{
-    //TODO
-}
-
-
-int str_enc(const char source[], char destination[], int cipher)
-{
-    //TODO
-}
-
-
-int str_dec(const char source[], char destination[], int cipher)
-{
-    //TODO
-}
-
- */
 
 char *str_cp(char *result, char *origin)
 {

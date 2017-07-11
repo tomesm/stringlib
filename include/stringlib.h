@@ -36,41 +36,6 @@ int str_rotate(const char source[], char destination[], int number);
 
 
 /**
- * Prints array of strings to stdout
- *
- * @param env array of strings to be printed
- * @param separator string which will separate strings in stdout
- *
- * @return number of printed environment variables
- */
-int print_env(const char *env[], char separator[]);
-
-
-/**
- * Encrypts string by rewriting index in source array
- *
- * @param source string to be encrypted
- * @param destination place where encrypted string will be stored
- * @param cipher number which will be used to calculate new index
- *
- * @return 0 if operation succeeds -1 otherwise
- */
-int str_enc(const char source[], char destination[], int cipher);
-
-
-/**
- * Decrypts string previously encrypted by encryptString
- * 
- * @param source string to be decrypted
- * @param destination place where decrypted string will be stored
- * @param cipher number which will be used to calculate new index
- *
- * @return 0 if operation succeeds -1 otherwise
- */
-int str_dec(const char source[], char destination[], int cipher);
-
-
-/**
  * Creates the string's copy
  * @param result - Where a copy will be stored
  * @param origin - From what string you will create a copy
